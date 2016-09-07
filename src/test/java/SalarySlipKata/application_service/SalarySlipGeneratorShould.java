@@ -21,7 +21,7 @@ public class SalarySlipGeneratorShould {
 
   @Test public void
   print_a_salary_slip_for_an_employee() {
-    salarySlipGenerator.printFor(new EmployeeId(12345), "01/09/2016");
+    salarySlipGenerator.printFor(new EmployeeId(12345), "Sep 2016");
 
     verify(standardSalarySlipPrinter).print();
   } 

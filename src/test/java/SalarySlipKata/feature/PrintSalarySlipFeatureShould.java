@@ -6,7 +6,6 @@ import static org.mockito.Mockito.verify;
 import org.junit.Before;
 import org.junit.Test;
 
-import SalarySlipKata.Clock;
 import SalarySlipKata.application_service.SalarySlipGenerator;
 import SalarySlipKata.domain.EmployeeId;
 import SalarySlipKata.domain_service.EmployeeRepository;
@@ -15,8 +14,9 @@ import SalarySlipKata.infrastructure.StandardSalarySlipPrinter;
 
 public class PrintSalarySlipFeatureShould {
 
+  private static final EmployeeId EMPLOYEE_12345 = new EmployeeId(12345);
+
   private Console console = mock(Console.class);
-  private Clock clock = mock(Clock.class);
 
   private SalarySlipGenerator salarySlipGenerator;
   private EmployeeRepository employeeRepository;
@@ -31,8 +31,9 @@ public class PrintSalarySlipFeatureShould {
 
   @Test public void
   print_the_salary_slip_with_employee_details_and_basic_salary() {
-    employeeRepository.addEmployee(new EmployeeId(12345), "John J Doe", 24000);
-    salarySlipGenerator.printFor(new EmployeeId(12345), clock.todayAsString());
+    employeeRepository.addEmployee(EMPLOYEE_12345, "John J Doe", 24000);
+
+    salarySlipGenerator.printFor(EMPLOYEE_12345, "Sep 2016");
 
     verify(console).print(
       "Date: 01 Sep 2016             Salary for period: Sep 2016\n" +

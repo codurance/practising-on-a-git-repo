@@ -8,11 +8,10 @@ public class SalarySlipGenerator {
   private StandardSalarySlipPrinter standardSalarySlipPrinter;
 
   public SalarySlipGenerator(StandardSalarySlipPrinter standardSalarySlipPrinter) {
-
     this.standardSalarySlipPrinter = standardSalarySlipPrinter;
   }
 
-  public void printFor(EmployeeId employeeId, String date) {
+  public void printFor(EmployeeId employeeId, String salaryPeriod) {
     standardSalarySlipPrinter.print();
   }
 }
