@@ -26,7 +26,7 @@ public class PrintSalarySlipFeatureShould {
   public void initialise() {
     employeeRepository = new EmployeeRepository();
     standardSalarySlipPrinter = new StandardSalarySlipPrinter();
-    salarySlipGenerator = new SalarySlipGenerator(standardSalarySlipPrinter);
+    salarySlipGenerator = new SalarySlipGenerator(employeeRepository, standardSalarySlipPrinter);
   }
 
   @Test public void
