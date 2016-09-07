@@ -1,9 +1,33 @@
 package SalarySlipKata.infrastructure;
 
+import static java.lang.String.format;
+
 import SalarySlipKata.domain.Employee;
 
 public class StandardSalarySlipPrinter {
+  private Console console;
+  private Clock clock;
+
+  public StandardSalarySlipPrinter(Clock clock, Console console) {
+    this.clock = clock;
+    this.console = console;
+  }
+
   public void print(Employee employee, String salaryPeriod) {
-    throw new UnsupportedOperationException();
+    console.print(
+        format(
+            "Date: %s             Salary for period: %s%n" +
+            "                                                         %n" +
+            "Employee ID: %s            Employee Name: %s  %n" +
+            "                                                         %n" +
+            "EARNINGS                                                 %n" +
+            "Basic            £%s.00                                %n",
+          clock.todayAsString(),
+          salaryPeriod,
+          employee.getId(),
+          employee.getName(),
+          employee.getMonthlySalary()
+        )
+    );
   }
 }

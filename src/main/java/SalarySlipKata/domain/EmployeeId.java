@@ -1,5 +1,7 @@
 package SalarySlipKata.domain;
 
+import static java.lang.String.valueOf;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
@@ -7,6 +9,11 @@ public class EmployeeId {
   private int id;
 
   public EmployeeId(int id) {this.id = id;}
+
+  @Override
+  public String toString() {
+    return valueOf(id);
+  }
 
   @Override
   public boolean equals(Object o) {
