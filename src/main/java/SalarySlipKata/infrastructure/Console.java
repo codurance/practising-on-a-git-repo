@@ -1,7 +1,9 @@
 package SalarySlipKata.infrastructure;
 
+import static java.lang.System.out;
+
 public class Console {
   public void print(String text) {
-    throw new UnsupportedOperationException();
+    out.println(text);
   }
 }

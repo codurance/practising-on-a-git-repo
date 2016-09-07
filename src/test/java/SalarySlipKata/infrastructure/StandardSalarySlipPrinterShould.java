@@ -1,4 +1,4 @@
-package SalarySlipKata.feature;
+package SalarySlipKata.infrastructure;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -7,20 +7,15 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.Test;
 
-import SalarySlipKata.SalarySlipGenerator;
+import SalarySlipKata.domain.Employee;
 import SalarySlipKata.domain.EmployeeId;
-import SalarySlipKata.infrastructure.Clock;
-import SalarySlipKata.infrastructure.Console;
-import SalarySlipKata.infrastructure.EmployeeRepository;
-import SalarySlipKata.infrastructure.StandardSalarySlipPrinter;
 
-public class PrintSalarySlipFeatureShould {
+public class StandardSalarySlipPrinterShould {
   private static final EmployeeId EMPLOYEE_ID_12345 = new EmployeeId(12345);
 
+  private StandardSalarySlipPrinter standardSalarySlipPrinter;
   private EmployeeRepository employeeRepository;
-  private SalarySlipGenerator salarySlipGenerator;
   private Console console;
-  private StandardSalarySlipPrinter standardSalarySlipGenerator;
   private Clock clock;
 
   @Before
@@ -30,16 +25,16 @@ public class PrintSalarySlipFeatureShould {
     console = mock(Console.class);
     clock = mock(Clock.class);
 
-    standardSalarySlipGenerator = new StandardSalarySlipPrinter(clock, console);
-    salarySlipGenerator = new SalarySlipGenerator(employeeRepository, standardSalarySlipGenerator);
+    standardSalarySlipPrinter = new StandardSalarySlipPrinter(clock, console);
   }
 
   @Test public void
-  print_salary_slip_for_an_employee() {
+  print_a_salary_slip() {
     when(clock.todayAsString()).thenReturn("01 Sep 2016");
     employeeRepository.addEmployee(EMPLOYEE_ID_12345, "John J Doe", 24000);
+    Employee employee = employeeRepository.getEmployee(EMPLOYEE_ID_12345);
 
-    salarySlipGenerator.printFor(EMPLOYEE_ID_12345, "Sep 2016");
+    standardSalarySlipPrinter.print(employee, "Sep 2016");
 
     verify(console).print(
         "Date: 01 Sep 2016             Salary for period: Sep 2016\n" +
@@ -48,7 +43,6 @@ public class PrintSalarySlipFeatureShould {
         "                                                         \n" +
         "EARNINGS                                                 \n" +
         "Basic            £2000.00                                \n"
-
     );
   }
 }
