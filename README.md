@@ -21,7 +21,6 @@ Salary slip kata
       ```java
       
           public class SalarySlipApplication {
-            public void addSalaryItem(EmployeeId employeeId, SalaryItem salaryItem, String salaryPeriod);
             public void printFor(EmployeeId employeeId, String salaryPeriod);
           }
       
