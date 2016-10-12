@@ -49,20 +49,8 @@ Salary slip kata
            Tax-free allowance: £916.67
            Taxable income: £83.33
            Tax Payable: £16.67
-
-#### Scenario 4: ...for an employee earning an annual salary of £40,000.00    
-  ...
-  <p>Then the monthly salary slip should contain the below:</p>
-   
-           Employee ID: 12345
-           Employee Name: John J Doe
-           Gross Salary: £3,333.33
-           National Insurance contributions: £319.40
-           Tax-free allowance: £916.67
-           Taxable income: £2,416.67
-           Tax Payable: £483.33
-
-#### Scenario 5: ...for an employee earning an annual salary of £45,000.00    
+           
+#### Scenario 4: ...for an employee earning an annual salary of £45,000.00    
   ...
   <p>Then the monthly salary slip should contain the below:</p>
    
@@ -74,7 +62,7 @@ Salary slip kata
            Taxable income: £2,833.33
            Tax Payable: £600.00
 
-#### Scenario 6: ...for an employee earning an annual salary of £101,000.00    
+#### Scenario 5: ...for an employee earning an annual salary of £101,000.00    
   ...
   <p>Then the monthly salary slip should contain the below:</p>
    
@@ -86,7 +74,7 @@ Salary slip kata
            Taxable income: £7,541.67
            Tax Payable: £2,483.33
 
-#### Scenario 7: ...for an employee earning an annual salary of £111,000.00    
+#### Scenario 6: ...for an employee earning an annual salary of £111,000.00    
   ...
   <p>Then the monthly salary slip should contain the below:</p>
    
@@ -98,7 +86,7 @@ Salary slip kata
            Taxable income: £8,791.67
            Tax Payable: £2,983.33
 
-#### Scenario 8: ...for an employee earning an annual salary of £122,000.00    
+#### Scenario 7: ...for an employee earning an annual salary of £122,000.00    
   ...
   <p>Then the monthly salary slip should contain the below:</p>
    
@@ -109,6 +97,18 @@ Salary slip kata
            Tax-free allowance: £0.00
            Taxable income: £10,166.67
            Tax Payable: £3,533.33
+
+#### Scenario 8: ...for an employee earning an annual salary of £150,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £12,500.00
+           National Insurance contributions: £527.73
+           Tax-free allowance: £0.00
+           Taxable income: £12,500.00
+           Tax Payable: £4,466.67
 
 #### Scenario 9: ...for an employee earning an annual salary of £160,000.00   
   ...
