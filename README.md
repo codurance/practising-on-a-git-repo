@@ -2,7 +2,7 @@ Salary slip kata
 ================
 ### Problem description: Salary slip generator for UK companies.
  
-  A typical salary slips contains employee details like employee id, employee name and their salary details like their gross salary, national insurance contributions , taxable income, tax-free allowance* and taxes payable.
+  A typical salary slip contains employee details like employee id, employee name and their salary details like their gross salary, national insurance contributions , taxable income, tax-free allowance* and taxes payable.
   
   In the event there are earnings like overtime and bonuses or deductions like loans, these are accounted for in the respective aspects of the salary slip and have an impact on the gross salary, national insurance contributions, and taxes to be paid.
   
@@ -12,24 +12,119 @@ Salary slip kata
   Also note that when the Gross Salary exceeds £100,000.00, personal allowance rules do not apply. Instead personal allowance decreases by a £1 for every £2 earned over £100,000.00. And this adjusted excess is taxed at the Higher rate tax.
   See [Examples: National Insurance contributions and Tax calculations](#examples-national-insurance-contributions-and-tax-calculations) for further information on the breakdown.
 
-### Scenario: print a salary slip with employee details for an employee 
+#### Scenario 1: print a salary slip with employee details for an employee earning an annual salary of £5,000.00
     
-  <p>Given I have an employee John J Doe with an annual salary of £24,000.00</p>
+  <p>Given I have an employee John J Doe with an annual salary of £5,000.00</p>
   <p>When I generate a monthly salary slip for the employee</p>
-  <p>Then it should contain the below:</p>
+  <p>Then the monthly salary slip should contain the below:</p>
   
            Employee ID: 12345
            Employee Name: John J Doe
-           Gross Salary: £2000.00
-           National Insurance contributions: £159.40
+           Gross Salary: £416.67
+           National Insurance contributions: £0.00
            Tax-free allowance: £916.67
-           Taxable income: £1083.33
-           Tax Payable: £216.67 
+           Taxable income: £0.00
+           Tax Payable: £0.00 
          
+#### Scenario 2: ...for an employee earning an annual salary of £9,060.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £755.00
+           National Insurance contributions: £10.00
+           Tax-free allowance: £916.67
+           Taxable income: £0.00
+           Tax Payable: £0.00
 
+#### Scenario 3: ...for an employee earning an annual salary of £12,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £1,000.00
+           National Insurance contributions: £39.40
+           Tax-free allowance: £916.67
+           Taxable income: £83.33
+           Tax Payable: £16.67
+
+#### Scenario 4: ...for an employee earning an annual salary of £40,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £3,333.33
+           National Insurance contributions: £319.40
+           Tax-free allowance: £916.67
+           Taxable income: £2,416.67
+           Tax Payable: £483.33
+
+#### Scenario 5: ...for an employee earning an annual salary of £45,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £3,750.00
+           National Insurance contributions: £352.73
+           Tax-free allowance: £916.67
+           Taxable income: £2,833.33
+           Tax Payable: £600.00
+
+#### Scenario 6: ...for an employee earning an annual salary of £101,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £8,416.67
+           National Insurance contributions: £446.07
+           Tax-free allowance: £875.00
+           Taxable income: £7,541.67
+           Tax Payable: £2,483.33
+
+#### Scenario 7: ...for an employee earning an annual salary of £111,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £9,250.00
+           National Insurance contributions: £462.73
+           Tax-free allowance: £458.33
+           Taxable income: £8,791.67
+           Tax Payable: £2,983.33
+
+#### Scenario 8: ...for an employee earning an annual salary of £122,000.00    
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+   
+           Employee ID: 12345
+           Employee Name: John J Doe
+           Gross Salary: £10,166.67
+           National Insurance contributions: £481.07
+           Tax-free allowance: £0.00
+           Taxable income: £10,166.67
+           Tax Payable: £3,533.33
+
+#### Scenario 9: ...for an employee earning an annual salary of £160,000.00   
+  ...
+  <p>Then the monthly salary slip should contain the below:</p>
+  
+          Employee ID: 12345
+          Employee Name: John J Doe
+          Gross Salary: £13,333.33
+          National Insurance contributions: £544.40
+          Tax-free allowance: £0.00
+          Taxable income: £13,333.33
+          Tax Payable: £4,841.67
+                      
 ### Acceptance criteria:
 - Salary slip generator should pass an employee with its Employee Id, Employee Name and Annual Salary
-- Salary slip should contain the Employee ID, Employee Name, Gross Salary, National Insurance, Taxable income, Tax-free allowance* and Tax payable for the month
+- Salary slip should contain the Employee ID, Employee Name, Gross Salary, National Insurance contributions, Taxable income, Tax-free allowance* and Tax payable for the month
 - The entry point should be the following interface, which you can not change:
   ```java
   
