@@ -16,3 +16,6 @@ done
 
 echo "Checkout out master"
 git checkout master
+
+echo "List of all branches that can now be accessed by git commands"
+git branch --list
